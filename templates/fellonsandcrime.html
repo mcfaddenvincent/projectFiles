@@ -1,0 +1,33 @@
+<style>
+    table {
+	border-collapse: collapse;
+	width: 100%;
+    }
+    td, th {
+	border: 1px solid #dddddd;
+	padding: 0.4em;
+    }
+    tr:nth-child(even) {
+	background-color: #dddddd;
+    }
+</style>
+<meta charset="UTF-8">
+<title>Fellons and Thier Crimes</title>
+{% if result %}
+    <table id="Fellons and Thier Crimes"><tbody>
+	<tr>
+	    <th>Felon ID</th>
+	    <th>Last Name</th>
+	    <th>First Name</th>
+	    <th>Crime Name</th>
+	</tr>
+	{% for row in result %}
+	    <tr>
+	        <td>{{ row.Felon ID }}</td>
+	        <td>{{ row.Felon Last Name }}</td>
+	        <td>{{ row.Felon First Name }}</td>
+		<td>{{ row.Crime Name }}</td>
+	    </tr>
+	{% endfor %}
+    </tbody></table>
+{% endif %}

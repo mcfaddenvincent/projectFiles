@@ -1,0 +1,31 @@
+<style>
+    table {
+	border-collapse: collapse;
+	width: 100%;
+    }
+    td, th {
+	border: 1px solid #dddddd;
+	padding: 0.4em;
+    }
+    tr:nth-child(even) {
+	background-color: #dddddd;
+    }
+</style>
+<meta charset="UTF-8">
+<title>Locations</title>
+{% if result %}
+    <table id="Locations"><tbody>
+	<tr>
+	    <th>Zip Code</th>
+	    <th>City</th>
+	    <th>County</th>
+	</tr>
+	{% for row in result %}
+	    <tr>
+	        <td>{{ row.zipCode }}</td>
+	        <td>{{ row.city }}</td>
+	        <td>{{ row.county }}</td>
+	    </tr>
+	{% endfor %}
+    </tbody></table>
+{% endif %}
